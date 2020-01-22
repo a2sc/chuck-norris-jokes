@@ -1,6 +1,6 @@
 # Chuck Norris Jokes
 
-Create random Chuck Norris Jokes.
+Create random Chuck Norris Jokes using the API from [The Internet Chuck Norris Database](http://www.icndb.com/)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/a2sc/chuck-norris-jokes.svg?style=flat-square)](https://packagist.org/packages/a2sc/chuck-norris-jokes)
 [![Build Status](https://img.shields.io/travis/a2sc/chuck-norris-jokes/master.svg?style=flat-square)](https://travis-ci.org/a2sc/chuck-norris-jokes)

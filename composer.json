@@ -9,7 +9,9 @@
             "email": "amaury@a2sc.com"
         }
     ],
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
     "autoload": {
         "psr-4": {
             "A2sc\\ChuckNorrisJokes\\": "src/"
