@@ -19,6 +19,7 @@ class JokeFactory
     {
         $response = $this->client->get(self::API_CLIENT_ENDPOINT);
         $json = json_decode($response->getBody()->getContents());
+
         return $json->value->joke;
     }
 }
