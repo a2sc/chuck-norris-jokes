@@ -3,6 +3,7 @@
 namespace A2sc\ChuckNorrisJokes;
 
 use Illuminate\Support\ServiceProvider;
+use A2sc\ChuckNorrisJokes\Console\ChuckNorrisJoke;
 
 class ChuckNorrisJokesServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,11 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                ChuckNorrisJoke::class
+            ]);
+        }
     }
 
     /**

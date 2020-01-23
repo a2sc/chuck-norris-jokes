@@ -33,9 +33,16 @@ $jokes = new JokeFactory();
 $joke = $jokes->getRandomJoke();
 ```
 
-You can use the Facade within Laravel project:
+### Within Laravel project:
+
+You can use the Facade:
 ```php
 $joke = ChuckNorris::getRandomJoke();
+```
+
+You can use artisan command:
+```bash
+php artisan chuck-norris
 ```
 
 ## Contributing
