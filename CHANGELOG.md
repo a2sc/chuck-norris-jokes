@@ -3,17 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-Adding Laravel Support.
+## [2.1.0] - 2020-01-23
 
+Adding Laravel Support.
 - Auto discovering package
-- Use Facade `ChuckNorris`
-```php
-$joke = ChuckNorris::getRandomJoke();
-```
-- Use console
-```bash
-php artisan chuck-norris
-```
+- Facade
+- Console command
 
 ## [2.0.0] - 2020-01-22
 
