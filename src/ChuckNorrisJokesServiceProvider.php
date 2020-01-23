@@ -14,6 +14,7 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
     public function boot()
     {
     }
+
     /**
      * Register the service.
      *
