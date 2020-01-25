@@ -37,4 +37,27 @@ class LaravelTest extends TestCase
 
         $this->assertSame('Some joke.'.PHP_EOL, $output);
     }
+
+    /** @test */
+    public function it_provides_a_chuck_norris_route()
+    {
+        ChuckNorris::shouldReceive('getRandomJoke')
+            ->once()
+            ->andReturn('Some joke.');
+
+        $this->get('/chuck-norris')
+            ->assertStatus(200);
+    }
+
+    /** @test */
+    public function it_provides_a_chuck_norris_view()
+    {
+        ChuckNorris::shouldReceive('getRandomJoke')
+            ->once()
+            ->andReturn('Some joke.');
+
+        $this->get('/chuck-norris')
+            ->assertViewIs('chuck-norris::joke')
+            ->assertViewHas('joke', 'Some joke.');
+    }
 }
