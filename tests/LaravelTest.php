@@ -2,6 +2,7 @@
 
 namespace A2sc\ChuckNorrisJokes\Tests;
 
+use A2sc\ChuckNorrisJokes\Joke;
 use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Artisan;
 use A2sc\ChuckNorrisJokes\Facades\ChuckNorris;
@@ -21,6 +22,12 @@ class LaravelTest extends TestCase
         return [
             'ChuckNorris' => ChuckNorrisJoke::class,
         ];
+    }
+
+    protected function getEnvironmentSetUp($app)
+    {
+        include_once __DIR__.'/../database/migrations/create_jokes_table.php.stub';
+        (new \CreateJokesTable)->up();
     }
 
     /** @test */
@@ -59,5 +66,15 @@ class LaravelTest extends TestCase
         $this->get('/chuck-norris')
             ->assertViewIs('chuck-norris::joke')
             ->assertViewHas('joke', 'Some joke.');
+    }
+
+    /** @test */
+    public function it_can_access_the_database()
+    {
+        $joke = new Joke();
+        $joke->joke = 'Some joke.';
+        $joke->save();
+
+        $this->assertDatabaseHas('jokes', ['joke' => 'Some joke.']);
     }
 }
